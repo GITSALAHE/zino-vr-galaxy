@@ -56,26 +56,26 @@ export function FeaturesSection() {
 
         {/* Web3 Integration Visual */}
         <div className="mt-20 relative">
-          <div className="glass-panel p-6 md:p-10 neon-border">
+          <div className="glass-panel p-6 md:p-10 bg-gradient-to-br from-[#1E1E30] to-[#14141F] border-[#2A2A42]">
             <div className="grid md:grid-cols-3 gap-6 md:gap-10">
               <div className="text-center md:text-left">
-                <h3 className="text-xl font-bold mb-2 text-zinovr-gold">Smart Contracts</h3>
-                <p className="text-zinovr-textLight">Automated game logic with instant payouts and verifiable outcomes</p>
+                <h3 className="text-xl font-bold mb-2 text-[#FEF7CD] glow-text">Smart Contracts</h3>
+                <p className="text-[#E5DEFF] text-opacity-90">Automated game logic with instant payouts and verifiable outcomes</p>
               </div>
               
               <div className="text-center">
-                <h3 className="text-xl font-bold mb-2 text-zinovr-purple">NFT Integration</h3>
-                <p className="text-zinovr-textLight">Collect and trade exclusive in-game assets as NFTs with real value</p>
+                <h3 className="text-xl font-bold mb-2 text-[#FEC6A1] glow-text">NFT Integration</h3>
+                <p className="text-[#E5DEFF] text-opacity-90">Collect and trade exclusive in-game assets as NFTs with real value</p>
               </div>
               
               <div className="text-center md:text-right">
-                <h3 className="text-xl font-bold mb-2 text-zinovr-teal">DAO Governance</h3>
-                <p className="text-zinovr-textLight">Community-driven development and profit sharing for token holders</p>
+                <h3 className="text-xl font-bold mb-2 text-[#D3E4FD] glow-text">DAO Governance</h3>
+                <p className="text-[#E5DEFF] text-opacity-90">Community-driven development and profit sharing for token holders</p>
               </div>
             </div>
             
             {/* Connecting Lines (visible on md and up) */}
-            <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-zinovr-gold via-zinovr-purple to-zinovr-teal -translate-y-1/2" />
+            <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-[#FEF7CD]/70 via-[#FEC6A1]/70 to-[#D3E4FD]/70 -translate-y-1/2" />
           </div>
         </div>
       </div>
