@@ -66,15 +66,6 @@ export function GamesSection() {
                   <span className="text-5xl">🎮</span>
                 </div>
               </div>
-              
-              <div className="mt-auto pt-4">
-                <ButtonGlow 
-                  glowColor={game.glowColor} 
-                  className={`w-full bg-zinovr-${game.glowColor} text-zinovr-background`}
-                >
-                  Play Now
-                </ButtonGlow>
-              </div>
             </VRCard>
           ))}
         </div>

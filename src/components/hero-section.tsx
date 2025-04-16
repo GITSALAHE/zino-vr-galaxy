@@ -28,9 +28,6 @@ export function HeroSection() {
           <ButtonGlow glowColor="purple" size="lg" className="bg-zinovr-purple text-zinovr-text">
             Explore Games
           </ButtonGlow>
-          <ButtonGlow glowColor="gold" variant="outline" size="lg" className="border-zinovr-gold text-zinovr-gold">
-            Connect Wallet
-          </ButtonGlow>
         </div>
 
         {/* Features Grid */}
@@ -42,9 +39,9 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Now responsive for mobile */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        <span className="text-zinovr-textLight text-sm mb-2">Scroll to discover</span>
+        <span className="text-zinovr-textLight text-sm mb-2 whitespace-nowrap">Scroll to discover</span>
         <div className="w-6 h-10 rounded-full border-2 border-zinovr-textLight flex justify-center pt-2">
           <div className="w-1.5 h-1.5 bg-zinovr-textLight rounded-full animate-bounce" />
         </div>
