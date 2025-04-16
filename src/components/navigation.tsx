@@ -1,9 +1,7 @@
-
 import * as React from "react"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ButtonGlow } from "@/components/ui/button-glow"
 import { Menu, X, Gamepad2, Blocks, Wallet, ChevronDown } from "lucide-react"
 import {
   DropdownMenu,
@@ -65,13 +63,6 @@ export function Navigation() {
           <NavLink href="#contact">Contact</NavLink>
         </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
-          <ButtonGlow glowColor="purple" className="bg-zinovr-purple text-zinovr-text">
-            Connect Wallet
-          </ButtonGlow>
-        </div>
-
         {/* Mobile Menu Button */}
         <Button 
           variant="ghost" 
@@ -94,9 +85,6 @@ export function Navigation() {
             <NavLink href="#features" mobile>Features</NavLink>
             <NavLink href="#about" mobile>About</NavLink>
             <NavLink href="#contact" mobile>Contact</NavLink>
-            <ButtonGlow glowColor="purple" className="bg-zinovr-purple text-zinovr-text w-full">
-              Connect Wallet
-            </ButtonGlow>
           </div>
         </div>
       )}
