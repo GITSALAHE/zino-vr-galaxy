@@ -1,10 +1,7 @@
-
-import { ButtonGlow } from "./ui/button-glow"
-import { CheckCircle2 } from "lucide-react"
-
+import { ButtonGlow } from "./ui/button-glow";
+import { CheckCircle2 } from "lucide-react";
 export function AboutSection() {
-  return (
-    <section id="about" className="relative py-24 px-6">
+  return <section id="about" className="relative py-24 px-6">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-80 h-80 bg-zinovr-teal/10 rounded-full blur-[100px]" />
@@ -31,9 +28,7 @@ export function AboutSection() {
               <BenefitItem text="Cross-platform VR compatibility" />
             </div>
 
-            <ButtonGlow glowColor="teal" className="bg-zinovr-teal text-zinovr-background">
-              Learn More About Us
-            </ButtonGlow>
+            
           </div>
 
           {/* About Visual */}
@@ -62,15 +57,15 @@ export function AboutSection() {
           </div>
         </div>
       </div>
-    </section>
-  )
+    </section>;
 }
-
-function BenefitItem({ text }: { text: string }) {
-  return (
-    <div className="flex items-center gap-3">
+function BenefitItem({
+  text
+}: {
+  text: string;
+}) {
+  return <div className="flex items-center gap-3">
       <CheckCircle2 className="h-5 w-5 text-zinovr-gold flex-shrink-0" />
       <span>{text}</span>
-    </div>
-  )
+    </div>;
 }

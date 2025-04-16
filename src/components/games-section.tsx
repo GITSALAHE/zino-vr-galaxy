@@ -1,35 +1,27 @@
-
-import { VRCard } from "./vr-card"
-import { Dice5, Coins, DollarSign } from "lucide-react"
-import { ButtonGlow } from "./ui/button-glow"
-
-const GAMES = [
-  {
-    title: "Crypto Poker VR",
-    description: "Immersive poker with real crypto stakes",
-    image: "poker-vr.jpg",
-    icon: <Dice5 className="h-8 w-8 text-zinovr-gold" />,
-    glowColor: "gold" as const
-  },
-  {
-    title: "NeonSlots",
-    description: "Web3 powered slots with provable fairness",
-    image: "neon-slots.jpg",
-    icon: <Coins className="h-8 w-8 text-zinovr-purple" />,
-    glowColor: "purple" as const
-  },
-  {
-    title: "BlackJack Multiverse",
-    description: "Multi-table VR blackjack experience",
-    image: "blackjack.jpg",
-    icon: <DollarSign className="h-8 w-8 text-zinovr-teal" />,
-    glowColor: "teal" as const
-  }
-]
-
+import { VRCard } from "./vr-card";
+import { Dice5, Coins, DollarSign } from "lucide-react";
+import { ButtonGlow } from "./ui/button-glow";
+const GAMES = [{
+  title: "Crypto Poker VR",
+  description: "Immersive poker with real crypto stakes",
+  image: "poker-vr.jpg",
+  icon: <Dice5 className="h-8 w-8 text-zinovr-gold" />,
+  glowColor: "gold" as const
+}, {
+  title: "NeonSlots",
+  description: "Web3 powered slots with provable fairness",
+  image: "neon-slots.jpg",
+  icon: <Coins className="h-8 w-8 text-zinovr-purple" />,
+  glowColor: "purple" as const
+}, {
+  title: "BlackJack Multiverse",
+  description: "Multi-table VR blackjack experience",
+  image: "blackjack.jpg",
+  icon: <DollarSign className="h-8 w-8 text-zinovr-teal" />,
+  glowColor: "teal" as const
+}];
 export function GamesSection() {
-  return (
-    <section id="games" className="relative py-24 px-6">
+  return <section id="games" className="relative py-24 px-6">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-1/4 w-60 h-60 bg-zinovr-purple/10 rounded-full blur-[80px]" />
@@ -49,16 +41,7 @@ export function GamesSection() {
 
         {/* Games Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {GAMES.map((game) => (
-            <VRCard
-              key={game.title}
-              title={game.title}
-              description={game.description}
-              icon={game.icon}
-              glowColor={game.glowColor}
-              className="h-full"
-              contentClassName="flex flex-col"
-            >
+          {GAMES.map(game => <VRCard key={game.title} title={game.title} description={game.description} icon={game.icon} glowColor={game.glowColor} className="h-full" contentClassName="flex flex-col">
               <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-zinovr-surface via-transparent to-zinovr-surface/80 z-10" />
                 <div className="absolute inset-0 bg-zinovr-surface flex items-center justify-center">
@@ -66,21 +49,13 @@ export function GamesSection() {
                   <span className="text-5xl">🎮</span>
                 </div>
               </div>
-            </VRCard>
-          ))}
+            </VRCard>)}
         </div>
 
         {/* View All Button */}
         <div className="mt-12 text-center">
-          <ButtonGlow 
-            variant="outline" 
-            glowColor="teal"
-            className="border-zinovr-teal text-zinovr-teal"
-          >
-            View All Games
-          </ButtonGlow>
+          
         </div>
       </div>
-    </section>
-  )
+    </section>;
 }
