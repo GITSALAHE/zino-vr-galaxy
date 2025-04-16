@@ -1,11 +1,8 @@
-
-import * as React from "react"
-import { VRCard } from "./vr-card"
-import { Blocks, Shield, GitMerge, Wallet } from "lucide-react"
-
+import * as React from "react";
+import { VRCard } from "./vr-card";
+import { Blocks, Shield, GitMerge, Wallet } from "lucide-react";
 export function FeaturesSection() {
-  return (
-    <section id="features" className="relative py-24 px-6 bg-zinovr-surface">
+  return <section id="features" className="relative py-24 px-6 bg-zinovr-surface">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/3 left-0 w-96 h-96 bg-zinovr-gold/5 rounded-full blur-[120px]" />
@@ -25,33 +22,13 @@ export function FeaturesSection() {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          <FeatureCard 
-            icon={<Blocks />} 
-            title="Blockchain Powered"
-            description="All games use smart contracts for provable fairness and transparent transactions"
-            color="purple"
-          />
+          <FeatureCard icon={<Blocks />} title="Blockchain Powered" description="All games use smart contracts for provable fairness and transparent transactions" color="purple" />
           
-          <FeatureCard 
-            icon={<Shield />} 
-            title="Secure Gameplay"
-            description="State-of-the-art encryption and blockchain verification for maximum security"
-            color="teal"
-          />
+          <FeatureCard icon={<Shield />} title="Secure Gameplay" description="State-of-the-art encryption and blockchain verification for maximum security" color="teal" />
           
-          <FeatureCard 
-            icon={<GitMerge />} 
-            title="Cross-Platform"
-            description="Seamlessly play across different VR platforms with consistent Web3 integration"
-            color="gold"
-          />
+          <FeatureCard icon={<GitMerge />} title="Cross-Platform" description="Seamlessly play across different VR platforms with consistent Web3 integration" color="gold" />
           
-          <FeatureCard 
-            icon={<Wallet />} 
-            title="Crypto Payments"
-            description="Support for multiple cryptocurrencies with instant deposits and withdrawals"
-            color="red"
-          />
+          <FeatureCard icon={<Wallet />} title="Crypto Payments" description="Support for multiple cryptocurrencies with instant deposits and withdrawals" color="red" />
         </div>
 
         {/* Web3 Integration Visual */}
@@ -75,35 +52,26 @@ export function FeaturesSection() {
             </div>
             
             {/* Connecting Lines (visible on md and up) */}
-            <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-[#FEF7CD]/70 via-[#FEC6A1]/70 to-[#D3E4FD]/70 -translate-y-1/2" />
+            
           </div>
         </div>
       </div>
-    </section>
-  )
+    </section>;
 }
-
-function FeatureCard({ 
-  icon, 
-  title, 
-  description, 
-  color 
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  description: string; 
-  color: "purple" | "gold" | "teal" | "red" 
+function FeatureCard({
+  icon,
+  title,
+  description,
+  color
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  color: "purple" | "gold" | "teal" | "red";
 }) {
-  return (
-    <VRCard
-      title={title}
-      description={description}
-      glowColor={color}
-      icon={React.cloneElement(icon as React.ReactElement, { 
-        className: `h-8 w-8 text-zinovr-${color}` 
-      })}
-    >
+  return <VRCard title={title} description={description} glowColor={color} icon={React.cloneElement(icon as React.ReactElement, {
+    className: `h-8 w-8 text-zinovr-${color}`
+  })}>
       <p className="text-zinovr-textLight">{description}</p>
-    </VRCard>
-  );
+    </VRCard>;
 }
