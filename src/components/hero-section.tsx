@@ -2,7 +2,10 @@ import * as React from "react";
 import { ButtonGlow } from "@/components/ui/button-glow";
 import { Gamepad2, Coins, Database, Radio } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
+import { useState } from "react";
 export function HeroSection() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   const scrollToSection = (sectionId: string) => {
     setIsMobileMenuOpen(false)
     const section = document.getElementById(sectionId)
