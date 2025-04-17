@@ -1,9 +1,10 @@
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 export function CyberpunkBackground() {
   const mountRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -103,19 +104,42 @@ export function CyberpunkBackground() {
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
     
+    // Mouse tracking handler
+    const handleMouseMove = (event: MouseEvent) => {
+      // Calculate normalized mouse coordinates (-1 to 1)
+      const x = (event.clientX / window.innerWidth) * 2 - 1;
+      const y = -(event.clientY / window.innerHeight) * 2 + 1;
+      
+      setMousePosition({ x, y });
+    };
+    
+    // Add mouse event listener
+    window.addEventListener('mousemove', handleMouseMove);
+    
     // Animation
     const animate = () => {
       requestAnimationFrame(animate);
       
-      // Rotate grid
+      // Rotate grid slightly based on mouse position
       gridHelper.rotation.z += 0.001;
+      gridHelper.rotation.y = mousePosition.x * 0.1;
+      gridHelper.rotation.x = Math.PI / 8 + mousePosition.y * 0.1;
       
-      // Rotate VR headset
+      // VR headset follows mouse
       vrHeadset.rotation.y += 0.005;
       vrHeadset.rotation.x += 0.002;
+      vrHeadset.position.x = mousePosition.x * 1.5;
+      vrHeadset.position.y = mousePosition.y * 1.5;
       
-      // Animate particles
+      // Particles follow mouse subtly
       particleMesh.rotation.y += 0.0005;
+      particleMesh.position.x = mousePosition.x * 0.8;
+      particleMesh.position.y = mousePosition.y * 0.8;
+      
+      // Camera slight movement with mouse for parallax effect
+      camera.position.x = mousePosition.x * 0.5;
+      camera.position.y = mousePosition.y * 0.5;
+      camera.lookAt(scene.position);
       
       // Pulse effect for particles
       const time = Date.now() * 0.0005;
@@ -138,6 +162,7 @@ export function CyberpunkBackground() {
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
       if (mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
       }
@@ -148,7 +173,7 @@ export function CyberpunkBackground() {
       particlesGeometry.dispose();
       particlesMaterial.dispose();
     };
-  }, []);
+  }, [mousePosition]);
 
   return (
     <div 
