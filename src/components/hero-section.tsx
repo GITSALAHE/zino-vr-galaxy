@@ -41,7 +41,7 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Indicator - Now responsive for mobile */}
-      <div className="absolute bottom-1 left-1/3 transform -translate-x-1/2 flex flex-col items-center">
+      <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
         <span className="text-zinovr-textLight text-sm mb-2 whitespace-nowrap">{t('scrollToDiscover')}</span>
         <div className="w-6 h-10 rounded-full border-2 border-zinovr-textLight flex justify-center pt-2">
           <div className="w-1.5 h-1.5 bg-zinovr-textLight rounded-full animate-bounce" />
