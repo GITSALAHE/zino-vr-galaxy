@@ -7,20 +7,19 @@ import { useState } from "react";
 import { CyberpunkBackground } from "./cyberpunk-background";
 
 export function HeroSection() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
-    setIsMobileMenuOpen(false)
-    const section = document.getElementById(sectionId)
+    setIsMobileMenuOpen(false);
+    const section = document.getElementById(sectionId);
     if (section) {
-      const yOffset = -80 // Adjust this value based on your header height
-      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset
-      window.scrollTo({ top: y, behavior: 'smooth' })
+      const yOffset = -80; // Adjust this value based on your header height
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
-  }
-  const {
-    t
-  } = useLanguage();
+  };
+
   return <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-24 pb-16">
       {/* Three.js Cyberpunk Background */}
       <CyberpunkBackground />
@@ -50,9 +49,6 @@ export function HeroSection() {
           <FeatureBox icon={<Radio />} text={t('liveGaming')} />
         </div>
       </div>
-
-      {/* Scroll Indicator - Now responsive for mobile */}
-      
     </section>;
 }
 
