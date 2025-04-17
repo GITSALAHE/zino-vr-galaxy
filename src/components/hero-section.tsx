@@ -3,6 +3,15 @@ import { ButtonGlow } from "@/components/ui/button-glow";
 import { Gamepad2, Coins, Database, Radio } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 export function HeroSection() {
+  const scrollToSection = (sectionId: string) => {
+    setIsMobileMenuOpen(false)
+    const section = document.getElementById(sectionId)
+    if (section) {
+      const yOffset = -80 // Adjust this value based on your header height
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: 'smooth' })
+    }
+  }
   const {
     t
   } = useLanguage();
@@ -26,7 +35,7 @@ export function HeroSection() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <ButtonGlow glowColor="purple" size="lg" className="bg-zinovr-purple text-zinovr-text">
+          <ButtonGlow onClick={() => scrollToSection('about')} glowColor="purple" size="lg" className="bg-zinovr-purple text-zinovr-text">
             {t('exploreGames')}
           </ButtonGlow>
         </div>
