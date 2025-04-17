@@ -1,27 +1,26 @@
 
 import { VRCard } from "./vr-card";
 import { Dice5, Coins, DollarSign } from "lucide-react";
-import { ButtonGlow } from "./ui/button-glow";
 import { useLanguage } from "@/contexts/language-context";
 
 export function GamesSection() {
   const { t } = useLanguage();
   
   const GAMES = [{
-    title: "Crypto Poker VR",
-    description: "Immersive poker with real crypto stakes",
+    title: t('cryptoPoker'),
+    description: t('pokerDescription'),
     image: "poker-vr.jpg",
     icon: <Dice5 className="h-8 w-8 text-zinovr-gold" />,
     glowColor: "gold" as const
   }, {
-    title: "NeonSlots",
-    description: "Web3 powered slots with provable fairness",
+    title: t('neonSlots'),
+    description: t('slotsDescription'),
     image: "neon-slots.jpg",
     icon: <Coins className="h-8 w-8 text-zinovr-purple" />,
     glowColor: "purple" as const
   }, {
-    title: "BlackJack Multiverse",
-    description: "Multi-table VR blackjack experience",
+    title: t('blackjackMultiverse'),
+    description: t('blackjackDescription'),
     image: "blackjack.jpg",
     icon: <DollarSign className="h-8 w-8 text-zinovr-teal" />,
     glowColor: "teal" as const

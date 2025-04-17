@@ -2,8 +2,10 @@
 import { cn } from "@/lib/utils"
 import { Gamepad2 } from "lucide-react"
 import { ButtonGlow } from "./ui/button-glow"
+import { useLanguage } from "@/contexts/language-context"
 
 export function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear()
   
   return (
@@ -18,46 +20,46 @@ export function Footer() {
               <span className="text-2xl font-bold animated-gradient-text">ZinoVR</span>
             </div>
             <p className="text-zinovr-textLight">
-              Next generation VR casino gaming with Web3 integration
+              {t('heroDescription')}
             </p>
           </div>
           
           {/* Quick Links */}
           <div className="md:col-span-1">
-            <h4 className="font-bold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-bold text-lg mb-4">{t('quickLinks')}</h4>
             <ul className="space-y-3">
-              <FooterLink href="#games">Games</FooterLink>
-              <FooterLink href="#features">Features</FooterLink>
-              <FooterLink href="#about">About</FooterLink>
-              <FooterLink href="#contact">Contact</FooterLink>
+              <FooterLink href="#games">{t('games')}</FooterLink>
+              <FooterLink href="#features">{t('features')}</FooterLink>
+              <FooterLink href="#about">{t('about')}</FooterLink>
+              <FooterLink href="#contact">{t('contact')}</FooterLink>
             </ul>
           </div>
           
           {/* Legal */}
           <div className="md:col-span-1">
-            <h4 className="font-bold text-lg mb-4">Legal</h4>
+            <h4 className="font-bold text-lg mb-4">{t('legal')}</h4>
             <ul className="space-y-3">
-              <FooterLink href="#">Terms of Service</FooterLink>
-              <FooterLink href="#">Privacy Policy</FooterLink>
-              <FooterLink href="#">Responsible Gaming</FooterLink>
-              <FooterLink href="#">KYC Policy</FooterLink>
+              <FooterLink href="#">{t('termsOfService')}</FooterLink>
+              <FooterLink href="#">{t('privacyPolicy')}</FooterLink>
+              <FooterLink href="#">{t('responsibleGaming')}</FooterLink>
+              <FooterLink href="#">{t('kycPolicy')}</FooterLink>
             </ul>
           </div>
           
           {/* Newsletter */}
           <div className="md:col-span-1">
-            <h4 className="font-bold text-lg mb-4">Stay Updated</h4>
+            <h4 className="font-bold text-lg mb-4">{t('stayUpdated')}</h4>
             <p className="text-zinovr-textLight mb-4">
-              Subscribe to our newsletter for updates
+              {t('subscribeNewsletter')}
             </p>
             <div className="flex space-x-2">
               <input 
                 type="email" 
-                placeholder="Your email" 
+                placeholder={t('yourEmailAddress')} 
                 className="bg-zinovr-surface border-zinovr-purple/20 rounded-md px-3 py-2 flex-1"
               />
               <ButtonGlow glowColor="purple" className="bg-zinovr-purple">
-                Join
+                {t('join')}
               </ButtonGlow>
             </div>
           </div>
@@ -66,7 +68,7 @@ export function Footer() {
         {/* Footer Bottom */}
         <div className="pt-6 border-t border-zinovr-purple/10 flex flex-col md:flex-row items-center justify-between">
           <div className="text-zinovr-textLight text-sm mb-4 md:mb-0">
-            © {currentYear} ZinoVR. All rights reserved.
+            © {currentYear} ZinoVR. {t('allRightsReserved')}
           </div>
           
           <div className="flex space-x-6">

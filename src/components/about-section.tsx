@@ -1,6 +1,10 @@
-import { ButtonGlow } from "./ui/button-glow";
+
 import { CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
+
 export function AboutSection() {
+  const { t } = useLanguage();
+  
   return <section id="about" className="relative py-24 px-6">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
@@ -13,19 +17,18 @@ export function AboutSection() {
           {/* About Content */}
           <div>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              About <span className="text-zinovr-teal glow-text">ZinoVR</span>
+              {t('aboutZinoVR')} <span className="text-zinovr-teal glow-text">ZinoVR</span>
             </h2>
             
             <p className="text-zinovr-textLight mb-6">
-              We are pioneers at the intersection of virtual reality and blockchain technology, 
-              creating immersive casino experiences that revolutionize the gaming industry.
+              {t('aboutDescription')}
             </p>
             
             <div className="space-y-4 mb-8">
-              <BenefitItem text="Leading VR casino game development studio" />
-              <BenefitItem text="Fully integrated Web3 payment systems" />
-              <BenefitItem text="Provably fair gaming algorithms" />
-              <BenefitItem text="Cross-platform VR compatibility" />
+              <BenefitItem text={t('leadingStudio')} />
+              <BenefitItem text={t('web3Payments')} />
+              <BenefitItem text={t('fairGaming')} />
+              <BenefitItem text={t('crossCompatibility')} />
             </div>
 
             
@@ -41,15 +44,15 @@ export function AboutSection() {
                 <div className="flex justify-between text-center">
                   <div>
                     <div className="text-2xl font-bold text-zinovr-gold">10+</div>
-                    <div className="text-sm text-zinovr-textLight">VR Games</div>
+                    <div className="text-sm text-zinovr-textLight">{t('vrGames')}</div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-zinovr-purple">24/7</div>
-                    <div className="text-sm text-zinovr-textLight">Support</div>
+                    <div className="text-sm text-zinovr-textLight">{t('support')}</div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-zinovr-teal">100%</div>
-                    <div className="text-sm text-zinovr-textLight">Secure</div>
+                    <div className="text-sm text-zinovr-textLight">{t('secure')}</div>
                   </div>
                 </div>
               </div>
@@ -59,6 +62,7 @@ export function AboutSection() {
       </div>
     </section>;
 }
+
 function BenefitItem({
   text
 }: {

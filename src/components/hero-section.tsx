@@ -2,8 +2,11 @@
 import * as React from "react"
 import { ButtonGlow } from "@/components/ui/button-glow"
 import { Gamepad2, Coins, Database, Radio } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-24 pb-16">
       {/* Animated Background */}
@@ -16,32 +19,32 @@ export function HeroSection() {
       {/* Hero Content */}
       <div className="max-w-5xl w-full mx-auto text-center space-y-8">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-          <span className="animated-gradient-text">Next Generation </span>
-          <span className="block mt-2">VR Casino Gaming</span>
+          <span className="animated-gradient-text">{t('nextGeneration')} </span>
+          <span className="block mt-2">{t('vrCasinoGaming')}</span>
         </h1>
 
         <p className="text-zinovr-textLight text-lg md:text-xl max-w-2xl mx-auto">
-          Immersive Web3 experiences that combine cutting-edge virtual reality with blockchain technology for the ultimate casino gaming experience
+          {t('heroDescription')}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <ButtonGlow glowColor="purple" size="lg" className="bg-zinovr-purple text-zinovr-text">
-            Explore Games
+            {t('exploreGames')}
           </ButtonGlow>
         </div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 md:mt-16">
-          <FeatureBox icon={<Gamepad2 />} text="VR Casino Games" />
-          <FeatureBox icon={<Coins />} text="Crypto Payments" />
-          <FeatureBox icon={<Database />} text="Web3 Integration" />
-          <FeatureBox icon={<Radio />} text="Live Gaming" />
+          <FeatureBox icon={<Gamepad2 />} text={t('vrCasinoGames')} />
+          <FeatureBox icon={<Coins />} text={t('cryptoPayments')} />
+          <FeatureBox icon={<Database />} text={t('web3Integration')} />
+          <FeatureBox icon={<Radio />} text={t('liveGaming')} />
         </div>
       </div>
 
       {/* Scroll Indicator - Now responsive for mobile */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        <span className="text-zinovr-textLight text-sm mb-2 whitespace-nowrap">Scroll to discover</span>
+        <span className="text-zinovr-textLight text-sm mb-2 whitespace-nowrap">{t('scrollToDiscover')}</span>
         <div className="w-6 h-10 rounded-full border-2 border-zinovr-textLight flex justify-center pt-2">
           <div className="w-1.5 h-1.5 bg-zinovr-textLight rounded-full animate-bounce" />
         </div>

@@ -3,8 +3,11 @@ import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 import { ButtonGlow } from "./ui/button-glow"
 import { Mail, MessageSquare, MapPin } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export function ContactSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="contact" className="relative py-24 px-6 bg-zinovr-surface">
       {/* Background Elements */}
@@ -17,10 +20,10 @@ export function ContactSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Get In <span className="text-zinovr-red glow-text">Touch</span>
+            {t('getInTouch')} <span className="text-zinovr-red glow-text">Touch</span>
           </h2>
           <p className="text-zinovr-textLight max-w-2xl mx-auto">
-            Have questions about our VR casino games or Web3 integration? Reach out to our team.
+            {t('contactDescription')}
           </p>
         </div>
 
@@ -29,21 +32,21 @@ export function ContactSection() {
           <div className="md:col-span-2 space-y-8">
             <ContactCard
               icon={<Mail className="h-6 w-6" />}
-              title="Email Us"
+              title={t('emailUs')}
               description="contact@zinovr.com"
               color="gold"
             />
             
             <ContactCard
               icon={<MessageSquare className="h-6 w-6" />}
-              title="Live Chat"
-              description="Available 24/7 for support"
+              title={t('liveChat')}
+              description={t('liveChatDesc')}
               color="purple"
             />
             
             <ContactCard
               icon={<MapPin className="h-6 w-6" />}
-              title="Office"
+              title={t('office')}
               description="100 Innovation Drive, Crypto Valley"
               color="teal"
             />
@@ -55,39 +58,39 @@ export function ContactSection() {
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm">Name</label>
+                    <label htmlFor="name" className="text-sm">{t('name')}</label>
                     <Input 
                       id="name" 
-                      placeholder="Your name" 
+                      placeholder={t('yourName')} 
                       className="bg-zinovr-background border-zinovr-purple/20 focus:border-zinovr-purple"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm">Email</label>
+                    <label htmlFor="email" className="text-sm">{t('email')}</label>
                     <Input 
                       id="email" 
                       type="email" 
-                      placeholder="Your email" 
+                      placeholder={t('yourEmail')} 
                       className="bg-zinovr-background border-zinovr-purple/20 focus:border-zinovr-purple"
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm">Subject</label>
+                  <label htmlFor="subject" className="text-sm">{t('subject')}</label>
                   <Input 
                     id="subject" 
-                    placeholder="How can we help?" 
+                    placeholder={t('howCanWeHelp')} 
                     className="bg-zinovr-background border-zinovr-purple/20 focus:border-zinovr-purple"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm">Message</label>
+                  <label htmlFor="message" className="text-sm">{t('message')}</label>
                   <Textarea 
                     id="message" 
-                    placeholder="Tell us more..." 
+                    placeholder={t('tellUsMore')} 
                     rows={5}
                     className="bg-zinovr-background border-zinovr-purple/20 focus:border-zinovr-purple"
                   />
@@ -98,7 +101,7 @@ export function ContactSection() {
                   glowColor="red" 
                   className="w-full bg-zinovr-red text-zinovr-text"
                 >
-                  Send Message
+                  {t('sendMessage')}
                 </ButtonGlow>
               </form>
             </div>
