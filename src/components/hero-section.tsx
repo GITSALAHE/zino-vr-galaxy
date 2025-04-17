@@ -1,8 +1,11 @@
+
 import * as React from "react";
 import { ButtonGlow } from "@/components/ui/button-glow";
 import { Gamepad2, Coins, Database, Radio } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useState } from "react";
+import { CyberpunkBackground } from "./cyberpunk-background";
+
 export function HeroSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -19,12 +22,8 @@ export function HeroSection() {
     t
   } = useLanguage();
   return <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-24 pb-16">
-      {/* Animated Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-zinovr-gold/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-zinovr-purple/20 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-zinovr-teal/10 rounded-full blur-[120px]" />
-      </div>
+      {/* Three.js Cyberpunk Background */}
+      <CyberpunkBackground />
 
       {/* Hero Content */}
       <div className="max-w-5xl w-full mx-auto text-center space-y-8">
@@ -56,6 +55,7 @@ export function HeroSection() {
       
     </section>;
 }
+
 function FeatureBox({
   icon,
   text
