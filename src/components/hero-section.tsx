@@ -38,7 +38,7 @@ export function HeroSection() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <ButtonGlow onClick={() => scrollToSection('about')} glowColor="purple" size="lg" className="bg-zinovr-purple text-zinovr-text">
+          <ButtonGlow onClick={() => scrollToSection('games')} glowColor="purple" size="lg" className="bg-zinovr-purple text-zinovr-text">
             {t('exploreGames')}
           </ButtonGlow>
         </div>
