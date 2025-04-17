@@ -1,14 +1,12 @@
-
-import * as React from "react"
-import { ButtonGlow } from "@/components/ui/button-glow"
-import { Gamepad2, Coins, Database, Radio } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
-
+import * as React from "react";
+import { ButtonGlow } from "@/components/ui/button-glow";
+import { Gamepad2, Coins, Database, Radio } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 export function HeroSection() {
-  const { t } = useLanguage();
-
-  return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-24 pb-16">
+  const {
+    t
+  } = useLanguage();
+  return <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-24 pb-16">
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-zinovr-gold/10 rounded-full blur-[100px]" />
@@ -43,25 +41,27 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Indicator - Now responsive for mobile */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+      <div className="absolute bottom-1 left-1/3 transform -translate-x-1/2 flex flex-col items-center">
         <span className="text-zinovr-textLight text-sm mb-2 whitespace-nowrap">{t('scrollToDiscover')}</span>
         <div className="w-6 h-10 rounded-full border-2 border-zinovr-textLight flex justify-center pt-2">
           <div className="w-1.5 h-1.5 bg-zinovr-textLight rounded-full animate-bounce" />
         </div>
       </div>
-    </section>
-  )
+    </section>;
 }
-
-function FeatureBox({ icon, text }: { icon: React.ReactNode; text: string }) {
-  return (
-    <div className="glass-panel p-4 flex flex-col items-center gap-2">
+function FeatureBox({
+  icon,
+  text
+}: {
+  icon: React.ReactNode;
+  text: string;
+}) {
+  return <div className="glass-panel p-4 flex flex-col items-center gap-2">
       <div className="text-zinovr-teal p-2">
-        {React.cloneElement(icon as React.ReactElement, { 
-          className: "h-6 w-6 md:h-8 md:w-8" 
-        })}
+        {React.cloneElement(icon as React.ReactElement, {
+        className: "h-6 w-6 md:h-8 md:w-8"
+      })}
       </div>
       <p className="text-sm md:text-base font-medium">{text}</p>
-    </div>
-  );
+    </div>;
 }
