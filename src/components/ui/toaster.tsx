@@ -1,3 +1,4 @@
+
 import { useToast } from "@/hooks/use-toast"
 import {
   Toast,
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/toast"
 
 export function Toaster() {
+  // We're using the updated hook that now includes a toasts property
   const { toasts } = useToast()
 
   return (
